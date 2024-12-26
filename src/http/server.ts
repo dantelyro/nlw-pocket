@@ -5,7 +5,7 @@ import {
   type ZodTypeProvider,
 } from 'fastify-type-provider-zod'
 import { createGoalRoute } from './routes/create-goal'
-import { createGoalCompletionRoute } from './routes/create-completion'
+import { createCompletionRoute } from './routes/create-completion'
 import { getPendingGoalsRoute } from './routes/get-pending-goals'
 import { getWeekSummaryRoute } from './routes/get-week-summary'
 import fastifyCors from '@fastify/cors'
@@ -20,7 +20,7 @@ app.setValidatorCompiler(validatorCompiler)
 app.setSerializerCompiler(serializerCompiler)
 
 app.register(createGoalRoute)
-app.register(createGoalCompletionRoute)
+app.register(createCompletionRoute)
 app.register(getPendingGoalsRoute)
 app.register(getWeekSummaryRoute)
 
@@ -29,5 +29,5 @@ app
     port: 3333,
   })
   .then(() => {
-    console.log('HTTP server running')
+    console.log('HTTP server running!')
   })

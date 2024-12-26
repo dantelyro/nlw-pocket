@@ -1,6 +1,6 @@
-import dayjs from 'dayjs'
 import { client, db } from '.'
 import { goalCompletions, goals } from './schema'
+import dayjs from 'dayjs'
 
 async function seed() {
   await db.delete(goalCompletions)
@@ -10,7 +10,7 @@ async function seed() {
     .insert(goals)
     .values([
       { title: 'Acordar cedo', desiredWeeklyFrequency: 5 },
-      { title: 'Me Exercitar', desiredWeeklyFrequency: 3 },
+      { title: 'Me exercitar', desiredWeeklyFrequency: 3 },
       { title: 'Meditar', desiredWeeklyFrequency: 1 },
     ])
     .returning()

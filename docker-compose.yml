@@ -1,11 +1,12 @@
-name: pockets-js-server
+name: pocket-js-server
 
 services:
-  pg:
+  inorbit-pg:
     image: bitnami/postgresql:13.16.0
-    ports: 
+    container_name: inorbit-pg
+    ports:
       - '5432:5432'
-    enviroment:
+    environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=inorbit
